@@ -1,0 +1,38 @@
+<app-container>
+  <header>
+    <section>
+      <img src="/assets/logo.png" alt="" />
+      <div>
+        <button>
+          <img class="seta" src="assets/arrow-left.png" alt="" />
+          <a routerLink="/lista-contatos">Voltar</a>
+        </button>
+      </div>
+    </section>
+    <section>
+      <img src="/assets/adicionar-contato.png" alt="" />
+      <h1>Adicionar Contato</h1>
+    </section>
+  </header>
+  <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      id="nome"
+      placeholder="Digite o nome"
+      formControlName="nome"
+    />
+    <label for="nome">Telefone</label>
+    <input
+      type="text"
+      id="telefone"
+      placeholder="Digite o telefone"
+      formControlName="telefone"
+    />
+    <app-separador></app-separador>
+    <section>
+      <button (click)="cancelar()" type="button">Cancelar</button>
+      <button type="submit">Salvar Contato</button>
+    </section>
+  </form>
+</app-container>
